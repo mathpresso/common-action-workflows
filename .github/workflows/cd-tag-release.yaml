@@ -1,6 +1,3 @@
-name: 🚀 Deploy App
-run-name: 🚀 Deploy App [${{ github.event.inputs.service }}/${{ github.event.inputs.env }}]
-
 on:
   workflow_call:
     inputs:
