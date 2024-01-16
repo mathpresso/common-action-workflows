@@ -10,6 +10,9 @@ on:
       team:
         required: true
         type: string
+      deploy_ref:
+        required: false
+        type: string
 
 jobs:
   deploy-each:
@@ -31,7 +34,7 @@ jobs:
                 case "frontend":
                   return context.ref == "refs/heads/main"
                 case "devops":
-                  return context.ref == "refs/heads/master"
+                  return context.ref == "${{ inputs.deploy_ref }}"
               }
               return false
             }
