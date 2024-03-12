@@ -21,7 +21,7 @@ jobs:
           echo "TODAY=$(date --date='+9 hours' +%y.%m.%d)" >> $GITHUB_ENV
 
       - name: ✨ Deploy tag and release ✨
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const checkBranch = () => {
