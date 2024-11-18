@@ -29,7 +29,7 @@ jobs:
                 case "backend":
                   return ("${{ inputs.env }}" == "prod" && context.ref == "refs/heads/main") || ("${{ inputs.env }}" == "dev" && context.ref == "refs/heads/develop")
                 case "frontend":
-                  return context.ref == "refs/heads/main"
+                  return "${{ inputs.env }}" == "prod" && context.ref == "refs/heads/main"
                 case "devops":
                   return context.ref == "refs/heads/master"
                 case "research":
